@@ -11,33 +11,30 @@ class ProductEditor {
 
     public static void addProduct() {
         getList();
-
         String name = InputManager.getString("Enter a name of the product you want to add: ");
 
-        int price = InputManager.getPositiveInt("Enter the price: ");
-        int quantity =  InputManager.getPositiveInt("Enter the quantity: ");
-
-        Main.products.add(new Product(name, price, quantity));
+        if (getProduct(name) != null){
+            System.out.println("There is already a product with the name " + name);
+        } else {
+            int price = InputManager.getPositiveInt("Enter the price: ");
+            int quantity =  InputManager.getPositiveInt("Enter the quantity: ");
+            Main.products.add(new Product(name, price, quantity));
+        }
     }
 
-    public static Product getProduct(String message) {
-        System.out.println(message);
-        String name = sc.nextLine();
-        Product product = null;
-
-        for (int i = 0; i<Main.products.size(); i++) {
-            if (Main.products.get(i).name.equalsIgnoreCase(name)) {
-                product = Main.products.get(i);
-                break;
+    public static Product getProduct(String name) {
+        for (Product p : Main.products) {
+            if (p.name.equalsIgnoreCase(name)) {
+                return p;
             }
         }
-        return product;
+        return null;
     }
 
     public static void editProduct() {
         getList();
 
-        Product product = getProduct("Enter a name of the product you want to edit: ");
+        Product product = getProduct(InputManager.getString("Enter a name of the product you want to edit: "));
 
         if (product != null) {
             int newPrice = InputManager.getPositiveInt("Enter the new price: ");
@@ -56,7 +53,7 @@ class ProductEditor {
     public static void deleteProduct() {
         getList();
 
-        Product product = getProduct("Enter the name of the product you want to delete: ");
+        Product product = getProduct(InputManager.getString("Enter the name of the product you want to delete: "));
 
         if (product != null) {
             System.out.println("Product has been successfully deleted!");
