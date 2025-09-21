@@ -1,9 +1,21 @@
-# Default ignored files
+# IntelliJ project files
+/.idea/
+/*.iml
+
+# Compiled class files
+/out/
+/*.class
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Custom ignored folders
 /shelf/
-/.idea
-# Editor-based HTTP Client requests
+
 /httpRequests/
-# Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-/out
