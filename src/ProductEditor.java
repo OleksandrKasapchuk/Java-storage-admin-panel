@@ -18,7 +18,8 @@ class ProductEditor {
         } else {
             int price = InputManager.getPositiveInt("Enter the price: ");
             int quantity =  InputManager.getPositiveInt("Enter the quantity: ");
-            Main.products.add(new Product(name, price, quantity));
+            Main.products.add(new Product(name, price, quantity, Category.OTHER));
+            System.out.println("The product '" + name + "' has been successfully added.");
         }
     }
 

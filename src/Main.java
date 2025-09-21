@@ -3,9 +3,9 @@ import java.util.*;
 public class Main {
     public static ArrayList<Product> products = new ArrayList<>(
             Arrays.asList(
-                    new Product("books", 100, 10),
-                    new Product("fruits", 50, 50),
-                    new Product("laptops", 1000, 5)
+                    new Product("books", 100, 10, Category.BOOKS),
+                    new Product("fruits", 50, 50, Category.FOOD),
+                    new Product("laptops", 1000, 5, Category.ELECTRONICS)
             )
     );
 
