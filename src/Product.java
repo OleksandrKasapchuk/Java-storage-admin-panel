@@ -1,4 +1,3 @@
-// class for creating product objects
 public class Product {
     public String name;
     protected int price;

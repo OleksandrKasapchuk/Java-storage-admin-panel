@@ -19,3 +19,5 @@ Thumbs.db
 /httpRequests/
 /dataSources/
 /dataSources.local.xml
+
+/target/
